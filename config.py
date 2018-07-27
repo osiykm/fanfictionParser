@@ -1,1 +1,2 @@
-urls_file = "urls.txt"
+URLS_FILE = "urls.txt"
+SAVE_FOLDER = 'books'

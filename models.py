@@ -1,4 +1,5 @@
 from datetime import date
+from typing import List
 
 
 def _auto_str(cls):
@@ -26,14 +27,18 @@ class AuthorData:
         self.url = url
 
 
+Chapters = List[ChapterData]
+
+
 @_auto_str
 class FanficData:
-    def __init__(self, name: str = "", author: AuthorData = AuthorData(), description: str = "", size: int = 0,
-                 updated: date = date.today(), created: date = date.today(), chapters=[]):
+    def __init__(self, name: str = "", author: AuthorData = AuthorData(), description: str = "", info: str = "",
+                 fandom: str = "", url: str = "", chapters: Chapters = ()):
         self.name = name
         self.author = author
-        self.size = size
-        self.updated = updated
-        self.created = created
+        self.info = info
+        self.fandom = fandom
+        self.url = url
         self.description = description
+        self.chapters = chapters
         self.chapters = chapters
